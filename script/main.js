@@ -1,19 +1,22 @@
 const minefield = document.getElementById("minefield-wrapper");
 const play = document.getElementById("play-button");
+const restart = document.getElementById("restart-button");
+let box;
 
 play.addEventListener("click", function() {
 
-    if(isEmpty(minefield) === true) {
+    minefield.innerHTML = null;
+
         for ( let i = 1; i <= 100; i++) {
-            box = createNewBox(minefield, i);
+
+           box = createNewBox(minefield, i);
+            toggleClassOnClick(box, "active");
+
         }
-    }
 
-    });
+        play.innerHTML = "Restart!";
 
-
-
-
+});
 
 
 
@@ -34,14 +37,18 @@ function createNewBox(parentToAppend, content) {
 };
 
 
+function toggleClassOnClick(element, classToToggle) {
 
-function isEmpty(element) {
+    let activeToggle = element.addEventListener("click", function() {
 
-    let empty = false;
+        element.classList.toggle(classToToggle);
 
-    if (element.children.length ===0 ) {
-        empty = true;
-    }
-    return empty;
+        if (element.classList.contains(classToToggle)) {
+            console.log(element.innerText);
+        };
 
-};
+
+        return activeToggle;
+
+    });
+}

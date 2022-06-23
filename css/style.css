@@ -14,7 +14,7 @@ header {
     font-size: 2rem;
 }
 
-#play-button {
+button {
     padding: 1rem 4rem;
     font-size: 2rem;
     cursor: pointer;
