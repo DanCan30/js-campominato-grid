@@ -10,14 +10,27 @@
 <body>
 
     <header>
+
         <h1>Minefield</h1>
-        <button id="play-button">Play!</button>
+        
+        <label for="difficulty">Select a difficulty</label>
+        
+        <select name="difficulty" id="difficulty-selector">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
     </header>
 
-    <main>
-        <div id="minefield-wrapper">
+    <section>
+        <button id="play-button">Play!</button>
 
-        </div>
+    </section>
+
+
+    <main>
+        <div id="minefield-wrapper" class="disabled"></div>
     </main>
 
     <script src="./script/main.js"></script>
